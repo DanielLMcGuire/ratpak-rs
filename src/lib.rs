@@ -9,13 +9,13 @@
 //!   any arithmetic is performed.
 //!
 //! ```rust
-//! use calc_engine::{initialize_engine, Rational, RationalMath, AngleType, RATIONAL_BASE, RATIONAL_PRECISION};
+//! use ratpak_rs::{initialize_engine, Rational, RationalMath, AngleType, RATIONAL_BASE, RATIONAL_PRECISION};
 //!
 //! initialize_engine(RATIONAL_BASE, RATIONAL_PRECISION);
 //!
 //! let a = Rational::from_i32(3);
 //! let b = Rational::from_i32(4);
-//! let c = a.checked_add(&b)?;
+//! let c = a.checked_add(&b).unwrap();
 //! println!("{}", c); // "7"
 //! ```
 
@@ -39,7 +39,7 @@ pub use rational::{Rational, RationalMath, AngleType, NumberFormat, RATIONAL_BAS
 /// ## Example
 ///
 /// ```rust
-/// use calc_engine::{initialize_engine, RATIONAL_BASE, RATIONAL_PRECISION};
+/// use ratpak_rs::{initialize_engine, RATIONAL_BASE, RATIONAL_PRECISION};
 ///
 /// initialize_engine(RATIONAL_BASE, RATIONAL_PRECISION);
 /// ```

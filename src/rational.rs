@@ -70,6 +70,8 @@ impl Rational {
     /// ## Example
     ///
     /// ```rust
+    /// use ratpak_rs::{Rational, initialize_engine, RATIONAL_BASE, RATIONAL_PRECISION};
+    /// initialize_engine(RATIONAL_BASE, RATIONAL_PRECISION);
     /// let r = Rational::from_i32(-42);
     /// ```
     pub fn from_i32(val: i32) -> Self {
@@ -81,6 +83,8 @@ impl Rational {
     /// ## Example
     ///
     /// ```rust
+    /// use ratpak_rs::{Rational, initialize_engine, RATIONAL_BASE, RATIONAL_PRECISION};
+    /// initialize_engine(RATIONAL_BASE, RATIONAL_PRECISION);
     /// let r = Rational::from_u32(100);
     /// ```
     pub fn from_u32(val: u32) -> Self {
@@ -95,8 +99,10 @@ impl Rational {
     /// ## Example
     ///
     /// ```rust
+    /// use ratpak_rs::{Rational, initialize_engine, RATIONAL_BASE, RATIONAL_PRECISION};
+    /// initialize_engine(RATIONAL_BASE, RATIONAL_PRECISION);
     /// let r = Rational::from_u32(42);
-    /// assert_eq!(r.to_u64()?, 42u64);
+    /// assert_eq!(r.to_u64().unwrap(), 42u64);
     /// ```
     pub fn to_u64(&self) -> Result<u64> {
         let mut out = 0u64;
@@ -213,6 +219,12 @@ impl fmt::Display for Rational {
         let s = self.to_formatted_string(RATIONAL_BASE, NumberFormat::Float, RATIONAL_PRECISION)
             .unwrap_or_else(|_| "Error".to_string());
         write!(f, "{}", s)
+    }
+}
+
+impl fmt::Debug for Rational {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "Rational({})", self)
     }
 }
 
