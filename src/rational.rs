@@ -336,4 +336,12 @@ impl RationalMath {
         };
         if err == 0 { Ok(unsafe { Rational::from_raw(out) }) } else { Err(err.into()) }
     }
+
+    pub fn cos(rat: &Rational, angle_type: AngleType) -> Result<Rational> {
+        let mut out = std::ptr::null_mut();
+        let err = unsafe {
+            ffi::wrap_cosrat(rat.0, angle_type as i32, RATIONAL_BASE, RATIONAL_PRECISION, &mut out)
+        };
+        if err == 0 { Ok(unsafe { Rational::from_raw(out) }) } else { Err(err.into()) }
+    }
 }

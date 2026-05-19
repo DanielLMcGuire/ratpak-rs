@@ -28,6 +28,7 @@ uint32_t wrap_rat_lt(PRAT_C a, PRAT_C b, int32_t precision, bool* out);
 uint32_t wrap_sinrat(PRAT_C x, int32_t angle_type, uint32_t radix, int32_t precision, PRAT_C* out);
 uint32_t wrap_exprat(PRAT_C x, uint32_t radix, int32_t precision, PRAT_C* out);
 uint32_t wrap_lograt(PRAT_C x, int32_t precision, PRAT_C* out);
+uint32_t wrap_cosrat(PRAT_C x, int32_t angle_type, uint32_t radix, int32_t precision, PRAT_C* out);
 
 #ifdef __cplusplus
 }

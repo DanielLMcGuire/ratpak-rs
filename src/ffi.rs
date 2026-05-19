@@ -33,4 +33,5 @@ extern "C" {
     pub fn wrap_sinrat(x: PRAT, angle_type: c_int, radix: c_uint, precision: c_int, out: *mut PRAT) -> u32;
     pub fn wrap_exprat(x: PRAT, radix: c_uint, precision: c_int, out: *mut PRAT) -> u32;
     pub fn wrap_lograt(x: PRAT, precision: c_int, out: *mut PRAT) -> u32;
+    pub fn wrap_cosrat(x: PRAT, angle_type: c_int, radix: c_uint, precision: c_int, out: *mut PRAT) -> u32;
 }

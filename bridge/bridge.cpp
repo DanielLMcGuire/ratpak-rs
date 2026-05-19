@@ -168,4 +168,15 @@ uint32_t wrap_lograt(PRAT_C x, int32_t precision, PRAT_C* out) {
     }
 }
 
+uint32_t wrap_cosrat(PRAT_C x, int32_t angle_type, uint32_t radix, int32_t precision, PRAT_C* out) {
+    try {
+        PRAT result = clone_rat(x);
+        cosanglerat(&result, static_cast<AngleType>(angle_type), radix, precision);
+        *out = result;
+        return 0;
+    } catch (uint32_t err) {
+        return err;
+    }
+}
+
 } // extern "C"
