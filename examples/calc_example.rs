@@ -1,5 +1,6 @@
 use ratpak_rs::{initialize_engine, AngleType, NumberFormat, Rational, RationalMath, Result};
 
+/// Helper to create a rational number representing a fraction `p/q`.
 fn frac(p: i32, q: i32) -> Result<Rational> {
     let numerator = Rational::from_i32(p);
     let denominator = Rational::from_i32(q);
