@@ -10,3 +10,7 @@ cc = "1.0"
 [[example]]
 name = "calc_example"
 path = "examples/calc_example.rs"
+
+[[example]]
+name = "rough_edges"
+path = "examples/rough_edges.rs"
