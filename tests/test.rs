@@ -98,6 +98,10 @@ mod tests {
 
         let neg = Rational::from_i32(-1);
         assert!(RationalMath::log(&neg).is_err());
+
+        let zero = Rational::from_i32(0);
+        let cos_zero = RationalMath::cos(&zero, AngleType::Radians).unwrap();
+        assert_eq!(cos_zero, Rational::from_i32(1));
     }
 
     #[test]
